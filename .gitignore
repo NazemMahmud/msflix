@@ -1,0 +1,6 @@
+# Jetbrains file
+.idea
+backend/server/.idea
+
+#virtualenv
+backend/venv
