@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party apps
+    'rest_framework',
+    'corsheaders',
+    # user defined apps
+    'applications.config_setup',
+    'applications.movies',
+    'applications.persons',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +88,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dj_local',
+        'NAME': 'dj_msflix',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -135,3 +142,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# define which origins are allowed
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
