@@ -4,3 +4,13 @@ backend/server/.idea
 
 #virtualenv
 backend/venv
+
+# pycache files
+backend/server/server/__pycache__/
+backend/server/applications/__pycache__/
+backend/server/applications/movies/__pycache__/
+backend/server/applications/movies/migrations/__pycache__/
+backend/server/applications/config_setup/__pycache__/
+backend/server/applications/config_setup/migrations/__pycache__/
+backend/server/applications/persons/__pycache__/__init__.cpython-37.pyc
+backend/server/applications/persons/migrations/__pycache__/
