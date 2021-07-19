@@ -5,7 +5,6 @@ backend/server/.idea
 #virtualenv
 backend/venv
 
-
 # pycache files
 backend/server/server/__pycache__/
 backend/server/applications/__pycache__/
