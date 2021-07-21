@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'corsheaders',
+    'djoser',
     # user defined apps
+    'applications.authentication',
     'applications.config_setup',
     'applications.movies',
     'applications.persons',
@@ -148,3 +150,23 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000"
 ]
+
+# configure DRF
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+# configure Djoser
+DJOSER = {
+    "USER_ID_FIELD": "username"
+}
+
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
