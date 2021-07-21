@@ -14,3 +14,5 @@ backend/server/applications/config_setup/__pycache__/
 backend/server/applications/config_setup/migrations/__pycache__/
 backend/server/applications/persons/__pycache__/
 backend/server/applications/persons/migrations/__pycache__/
+backend/server/applications/authentication/__pycache__/
+backend/server/applications/authentication/migrations/__pycache__/
