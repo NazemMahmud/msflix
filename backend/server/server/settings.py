@@ -167,6 +167,7 @@ DJOSER = {
     "USER_ID_FIELD": "username"
 }
 
-SIMPLE_JWT = {
-   'AUTH_HEADER_TYPES': ('JWT',),
-}
+# to set token name as JWT instead of Token
+# SIMPLE_JWT = {
+#    'AUTH_HEADER_TYPES': ('JWT',),
+# }
