@@ -3,27 +3,13 @@ from django.db import models
 
 # All types of genres.
 class Genres(models.Model):
-    MOVIE = 'Movies'
-    SERIES = 'TV Series'
-    MOVIE_SERIES = [
-        (MOVIE, 'Movies'),
-        (SERIES, 'TV Series'),
-    ]
-
-    name = models.CharField(max_length=50)
-    parent = models.ForeignKey('self', null=True, on_delete=models.CASCADE)
-    main_parent= models.CharField(max_length=20, choices=MOVIE_SERIES)
-    created_at = models.DateTimeField(auto_now_add=True)
-    # Later
-    # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
-# All types of Languages.
-class Languages(models.Model):
     name = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     # Later
     # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 # All Movie rating Type, such as PG-13.

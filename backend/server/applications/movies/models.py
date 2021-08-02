@@ -1,5 +1,5 @@
 from django.db import models
-from applications.config_setup.models import FilmRatings, Genres, Languages
+from applications.config_setup.models import FilmRatings, Genres
 from applications.persons.models import Persons
 
 
@@ -16,10 +16,10 @@ class Movies(models.Model):
     movie_type = models.CharField(max_length=20, choices=MOVIE_SERIES)
     release_year = models.IntegerField(null=False)
     runtime = models.CharField(max_length=100) # in mins, like 143 mins
-    film_rating = models.ForeignKey(FilmRatings, on_delete=models.SET_NULL, null=True) # like PG-13
+    film_rating = models.CharField(max_length=25, null=True, blank=True) # like PG-13
     video_type = models.CharField(max_length=200, null=True, blank=True) # like 710p H264
-    audio_type = models.CharField(max_length=200, null=True, blank=True) # like ENglish AAC
-    language = models.ForeignKey(Languages, on_delete=models.SET_NULL, null=True) # like ENglish
+    audio_type = models.CharField(max_length=200, null=True, blank=True) # like English AAC
+    language = models.CharField(max_length=25, null=True, blank=True) # like English
     description = models.TextField(max_length=600, null=True, blank=True)
     tags = models.TextField(max_length=500, null=True, blank=True)
     # Later
@@ -77,7 +77,7 @@ class MovieFiles(models.Model):
 # movie subtitles
 class Subtitles(models.Model):
     movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
-    language = models.ForeignKey(Languages, on_delete=models.SET_NULL, null=True)
+    language = models.CharField(max_length=25, null=True, blank=True)
     file_path = models.TextField(max_length=255, blank=True, null=True)
     # Later
     # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
