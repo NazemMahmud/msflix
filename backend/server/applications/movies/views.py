@@ -18,48 +18,23 @@ class MovieViewSet(viewsets.ModelViewSet):
     """
         Create a model instance.
         {
-    "adult": false,
-    "backdrop_path": "/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
-    "belongs_to_collection": null,
-    "budget": 200000000,
-    "genres": [
-        {
-            "id": 28,
-            "name": "Action"
-        },
-        {
-            "id": 12,
-            "name": "Adventure"
-        },
-        {
-            "id": 53,
-            "name": "Thriller"
-        },
-        {
-            "id": 878,
-            "name": "Science Fiction"
+            "adult": false,
+            "backdrop_path": "/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
+            "belongs_to_collection": null,
+            "budget": 200000000,
+            "genres": [{ "id": 28, "name": "Action"}, ],
+            "homepage": "https://www.marvel.com/movies/black-widow",
+            "imdb_id": "tt3480822",
+            "poster_path": "/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
+            "production_companies": [{
+                    "id": 420,
+                    "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+                    "name": "Marvel Studios",
+                    "origin_country": "US"
+                }
+            ],
+            "production_countries": [{"iso_3166_1": "US","name": "United States of America"}],
         }
-    ],
-    "homepage": "https://www.marvel.com/movies/black-widow",
-    "imdb_id": "tt3480822",
-    "poster_path": "/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
-    "production_companies": [
-        {
-            "id": 420,
-            "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
-            "name": "Marvel Studios",
-            "origin_country": "US"
-        }
-    ],
-    "production_countries": [
-        {
-            "iso_3166_1": "US",
-            "name": "United States of America"
-        }
-    ],
-
-
-}
     """
     def create(self, request, *args, **kwargs):
         if "genres" in request.data:  # that is coming from TMDB API

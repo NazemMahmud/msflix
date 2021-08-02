@@ -1,13 +1,9 @@
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-
-import json  # for test
 from datetime import datetime
 from collections import namedtuple
 
 from ..models import Movies
 from ..serializers import MovieSerializer, MovieGenreSerializer
-from applications.config_setup.utils.config_service import GenreService
+from applications.config_setup.utils.config_service import GenreService, FilmRatingService
 
 
 class MovieService:
@@ -34,11 +30,29 @@ class MovieService:
         # print(f"Genre: {genres}")
         # print(f"Genre Ids: {genre_ids}")
 
-        # Step 2: Store movie
+        # Step 2: Store film ratings
+        data = {
+            "data": {
+                "movie_id": request.data["id"]
+            }
+        }
+        rating = namedtuple("rating", data.keys())(*data.values())  # convert dict to obj
+        film_rating_service = FilmRatingService()
+        film_rating = film_rating_service.film_rating_create(rating)
+        print(f"Fim rating: {film_rating}")
+        request.data["film_rating"] = film_rating.name
+
+        # genres = genre_service.multiple_create(genre)  # Genres [<Genres: 1: Action>, <Genres: 2: Adventure>]
+        # genre_ids = []
+        # [genre_ids.append(item.id) for item in genres]  # [1, 2, 3, 4, 15, 16]
+        # print(f"Genre: {genres}")
+        # print(f"Genre Ids: {genre_ids}")
+
+        # Step Last: Store movie
         movie = self.movie_create(request)
 
         """
-            # Step 3 : Store movie genre
+            # Step : Store movie genre
             For Movies.objects.get(id=serializer.data['id'])-> "Incorrect type. Expected pk value, received Movies."
             Fields should be, movie and genre, not genres
             For Genre objects:  "Incorrect type. Expected pk value, received list."
@@ -77,7 +91,7 @@ class MovieService:
             "audio_type": "",
             "description": request.data["overview"],
             "tags": request.data["tagline"],
-            "film_rating": "",
+            "film_rating": request.data["film_rating"],
             "language": language
         }
 
