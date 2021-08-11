@@ -1,0 +1,41 @@
+.videoList {
+    margin-left: 25px;
+    margin-right: 25px
+}
+
+h3.listHeading {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+h3.listHeading > span {
+    margin-left: 5px
+}
+
+h3.listHeading > span > svg {
+    fill: #fff;
+    margin-left: -90px;
+}
+
+span.explore {
+    font-size: 16px;
+    color: #54b9c5;
+    opacity: 0;
+    max-width: 0;
+}
+
+h3.listHeading:hover > span.explore {
+    transition: all 1s linear;
+    opacity: 1;
+    margin-left: 10px;
+}
+
+h3.listHeading:hover > span > svg {
+    transition: all 0.3s ease-out;
+    margin-top: 3px;
+    height: 13px;
+    color: #54b9c5;
+    margin-left: -10px;
+}

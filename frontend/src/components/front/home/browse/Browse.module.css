@@ -1,1 +1,43 @@
 .listImgWidth { width: 100% }
+
+.browseBody {
+    background-color: #232020;
+    padding-bottom: 100px;
+}
+
+.noBanner {
+    height: 500px;
+    border: 1px solid #fff;
+    margin-top: 75px;
+    background: #2b2121;
+}
+
+.noBannerHeading {
+    color: #fff;
+    position: absolute;
+    top: 22%;
+    left: 35%;
+}
+
+.banner {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.bannerPlayer {
+    margin-top: -135px;
+}
+
+.slider {
+    text-align: center;
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.slider:hover {
+    /*transform: scale(2.5);*/
+}
+
+.sectionList {
+    margin-top: 55px;
+}
