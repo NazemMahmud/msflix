@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import Admin from "./components/admin/Admin";
 import Home from "./components/Home";
-import Browse from "./components/front/Browse";
+import Browse from "./components/front/home/browse/Browse";
 
 /**
  *
