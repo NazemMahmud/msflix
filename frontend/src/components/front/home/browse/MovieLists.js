@@ -1,6 +1,10 @@
 import React, {useState, Fragment, useEffect, useRef} from "react";
+import classNames from 'classnames';
 import { Slide } from "react-slideshow-image";
+import {Button, Row, Col} from "react-bootstrap";
 import 'react-slideshow-image/dist/styles.css'
+import "bootstrap-icons/font/bootstrap-icons.css";
+import 'font-awesome/css/font-awesome.min.css';
 
 import styles from "./Browse.module.css";
 import frontStyles from "../../front.module.css";
@@ -23,7 +27,7 @@ function MovieLists() {
     //         }
     //     })
     // }
-
+    const buttonClasses = classNames('frontStyles.mTop', 'frontStyles.infoButtons');
     /**
      * Slider properties
      * @type {{duration: number, nextArrow: *, prevArrow: *, slidesToScroll: number, slidesToShow: number, indicators: boolean, autoplay: boolean}}
@@ -46,14 +50,47 @@ function MovieLists() {
                     </button>
     };
 
+    const genres = [
+        {   id: 1, name: "Genre 1"},
+        {   id: 2, name: "Genre 2"},
+        {   id: 3, name: "Genre 3"},
+    ];
+
     const movieData = [];
     // {/*<div dangerouslySetInnerHTML={{__html: movieData[0].div}} />*/}
-    for(var i=0; i<8; i++) {
-        movieData.push( <div className={styles.slider}>
+    for(let i=0; i<8; i++) {
+        let genreData = [];
+        for (let g=0; g<genres.length; g++) {
+            const genre = <span>{ genres[g].name}</span>;
+            genreData.push(genre);
+            if (g < genres.length - 1){
+                genreData.push(<span className={frontStyles.separator} />);
+            }
+        }
+        const div = <div className={frontStyles.slideItem}>
+                        <div className={frontStyles.slider}>
                             <img src="https://image.tmdb.org/t/p/w500/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg"
-                                     className={styles.listImgWidth} alt=""/>
+                                 className={frontStyles.listImgWidth} alt=""/>
                         </div>
-        );
+                        <div className={frontStyles.sliderInfo}>
+                            <Row>
+                                <Col className={frontStyles.mTop}>
+                                    <button className={`${frontStyles.playButton} ${frontStyles.infoButtons}`}>
+                                        <i className="fa fa-play" />
+                                    </button>
+                                    <button className={`${frontStyles.plusButton} ${frontStyles.infoButtons}`}>
+                                        <i className="fa fa-plus" />
+                                    </button>
+                                </Col>
+                            </Row>
+
+                            <p className={frontStyles.duration}> 2h 22m</p>
+                            <p className={frontStyles.genres}>
+                                {genreData}
+                            </p>
+                        </div>
+                    </div>;
+        movieData.push( div );
     }
     return(
         <Fragment>
@@ -67,9 +104,13 @@ function MovieLists() {
                         </svg>
                     </span>
                 </h3>
-                <Slide {...properties}>
-                    { movieData }
-                </Slide>
+                <div>
+                    <Slide {...properties}>
+                        {/*<div className={frontStyles.slideList} >*/}
+                        { movieData }
+                        {/*</div>*/}
+                    </Slide>
+                </div>
             </div>
             {/*<div className="col-md-12">
             <div

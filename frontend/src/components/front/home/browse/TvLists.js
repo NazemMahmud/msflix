@@ -31,9 +31,9 @@ function TvLists() {
 
     const tvData = [];
     for(var i=0; i<8; i++) {
-        tvData.push( <div className={styles.slider}>
+        tvData.push( <div className={frontStyles.slider}>
                 <img src="https://image.tmdb.org/t/p/w500/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg"
-                     className={styles.listImgWidth} alt=""/>
+                     className={frontStyles.listImgWidth} alt=""/>
                 </div>
         );
     }

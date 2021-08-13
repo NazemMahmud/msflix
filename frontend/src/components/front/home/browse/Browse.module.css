@@ -1,5 +1,3 @@
-.listImgWidth { width: 100% }
-
 .browseBody {
     background-color: #232020;
     padding-bottom: 100px;
@@ -26,16 +24,6 @@
 
 .bannerPlayer {
     margin-top: -135px;
-}
-
-.slider {
-    text-align: center;
-    font-size: 30px;
-    margin-right: 5px;
-}
-
-.slider:hover {
-    /*transform: scale(2.5);*/
 }
 
 .sectionList {
