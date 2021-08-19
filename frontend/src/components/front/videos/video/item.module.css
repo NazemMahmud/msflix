@@ -1,0 +1,54 @@
+.info {
+    overflow-x: hidden;
+    /*min-height: 1750px;*/
+    padding-bottom: 25px;
+}
+.bannerImage {
+    min-height: 573px;
+    margin-top: -53px;
+/*    background-image: url(https://image.tmdb.org/t/p/original/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+/*}*/
+/*.item_bannerImage__2dszi {*/
+/*    height: 773px;*/
+}
+
+.itemContainer {
+    background-color: #1f1d1d;
+}
+
+.thumbContainer {
+    margin-top: -15% !important;
+}
+.itemContainer img.thumb {
+    margin-left: 15%;
+    width: 100%;
+}
+
+.infoSectionOne {
+    margin-top: -125px;
+    min-height: 125px;
+    background-color: #000;
+    opacity: 0.7;
+    padding-left: 60px;
+    margin-left: 45px;
+    color: #fff;
+}
+
+.title {
+    color: #fff;
+    padding-top: 15px;
+}
+
+.infoOneSubOne {
+    margin-top: 15px;
+}
+.releaseYear, .runTime, .filmRating {
+    margin-right: 15px;
+}
+
+.filmRating {
+    border: 1px solid #fff;
+    padding: 2px 6px;
+}

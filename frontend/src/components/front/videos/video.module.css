@@ -49,78 +49,55 @@ h3.listHeading:hover > span > svg {
     margin-right: 5px;
     transition: transform .2s;
     overflow: visible !important;
+    min-height: 195px;
 }
 
 .slider:hover {
     /*transform: scale(1.5);*/
-    /*z-index: 999;*/
-    /*margin-top: -25px;*/
-    /*text-align: center;*/
-    /*font-size: 30px;*/
-    /*margin-right: 5px;*/
 }
 
-.listImgWidth { width: 100% }
+.sliderImage { width: 100%; }
 
 .sliderInfo {
-    min-height: 202px;
+    min-height: 195px;
     color: #fff;
     padding-left: 20px;
     background-color: #1f1d1d;
-    box-shadow: 0px 4px 5px #000;
+    /*box-shadow: 0px 4px 5px #000;*/
     margin-right: 5px;
-    /*display: none;*/
-    /*transform: scale(0);*/
     opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;
     position: relative;
-    /*width: inherit;*/
-    /*margin-top: -56%;*/
     overflow: visible !important;
     z-index: 999;
-    /*overflow: visible;*/
-    margin-top: -56%;
-    /*width: 1px;*/
-    /*transition: transform .2s;*/
+    margin-top: -255px;
 }
 
 .slideItem {
     /*overflow: visible !important;*/
 }
-/*.slideItem:hover {*/
-    /*transform: scale(1.5);*/
-    /*margin-top: -25px;*/
-/*}*/
 
-.slideItem:hover .sliderInfo{
-    /*transition: all 0.3s ease-out;*/
-    /*transform: scale(1.5);*/
-    /*position: absolute;*/
-    overflow: visible !important;
-    /*display: inline-block;*/
-    /*overflow-y: visible;*/
-    /*z-index: 100;*/
-    /*visibility: visible;*/
-    opacity: 0.8;
-    /*width: 500px;*/
+.slideItem:hover .sliderInfo {
+    transition: all .05s linear;
+    opacity: 0.85;
     position: relative;
-    /*top: 54%;*/
-    /*background-color: #000;*/
-    /*margin-top: -2px;*/
-    /*left: 50%;*/
-    /*left:-35px;*/
-    /*width:500px;*/
-    /*height:auto;*/
-    /*display:block;*/
-    /*z-index:999;*/
-    /*margin-top: 1px;*/
+    /*margin-top: -200px;*/
 }
+
+/*****************************
+Slider Hover Section
+*****************************/
 
 .playButton {
     padding-left: 10px;
 }
-.plusButton  {
 
+.plusButton  {
+    padding-top: 2px;
+}
+
+.detailsButton  {
+    float: right;
 }
 
 .infoButtons {
@@ -140,7 +117,7 @@ h3.listHeading:hover > span > svg {
 }
 
 .duration, .genres {
-    margin-top: 15px;
+    margin-top: 25px;
     margin-left: 2px;
 }
 
@@ -153,10 +130,8 @@ h3.listHeading:hover > span > svg {
 }
 
 .genres span {
-    /*padding-left: 7px;*/
     padding-right: 10px;
     padding-top: 2px;
-    /*border-right: 1px solid;*/
 }
 
 .separator {
@@ -166,5 +141,4 @@ h3.listHeading:hover > span > svg {
     height: 11px;
     border-radius: 54%;
     background-color: #5d5d5d;
-
 }

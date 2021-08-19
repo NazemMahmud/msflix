@@ -2,8 +2,7 @@ import React, {Fragment} from "react";
 import { Slide } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'
 
-import styles from "./Browse.module.css";
-import frontStyles from "../../front.module.css";
+import frontStyles from "./video.module.css";
 
 function TvLists() {
 

@@ -6,10 +6,9 @@ import 'react-slideshow-image/dist/styles.css'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'font-awesome/css/font-awesome.min.css';
 
-import styles from "./Browse.module.css";
-import frontStyles from "../../front.module.css";
+import styles from "./video.module.css";
 
-function MovieLists() {
+function MovieLists(props) {
     // componentDidMount(){
     //     $('.inner-repeat').each(function (){
     //         var next = $(this).next();
@@ -27,7 +26,7 @@ function MovieLists() {
     //         }
     //     })
     // }
-    const buttonClasses = classNames('frontStyles.mTop', 'frontStyles.infoButtons');
+    const buttonClasses = classNames('styles.mTop', 'styles.infoButtons');
     /**
      * Slider properties
      * @type {{duration: number, nextArrow: *, prevArrow: *, slidesToScroll: number, slidesToShow: number, indicators: boolean, autoplay: boolean}}
@@ -56,6 +55,11 @@ function MovieLists() {
         {   id: 3, name: "Genre 3"},
     ];
 
+    const totalSeasons = "3 seasons";
+    const runTime = "2h 22m";
+    console.log("Type: ", props.type);
+    const midLineText = props.type === "movie" ? runTime : totalSeasons;
+
     const movieData = [];
     // {/*<div dangerouslySetInnerHTML={{__html: movieData[0].div}} />*/}
     for(let i=0; i<8; i++) {
@@ -64,28 +68,32 @@ function MovieLists() {
             const genre = <span>{ genres[g].name}</span>;
             genreData.push(genre);
             if (g < genres.length - 1){
-                genreData.push(<span className={frontStyles.separator} />);
+                genreData.push(<span className={styles.separator} />);
             }
         }
-        const div = <div className={frontStyles.slideItem}>
-                        <div className={frontStyles.slider}>
+        const div = <div className={styles.slideItem}>
+                        <div className={styles.slider}>
                             <img src="https://image.tmdb.org/t/p/w500/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg"
-                                 className={frontStyles.listImgWidth} alt=""/>
+                                 className={styles.listImgWidth} alt=""/>
                         </div>
-                        <div className={frontStyles.sliderInfo}>
+                        <div className={styles.sliderInfo}>
                             <Row>
-                                <Col className={frontStyles.mTop}>
-                                    <button className={`${frontStyles.playButton} ${frontStyles.infoButtons}`}>
+                                <Col className={styles.mTop}>
+                                    <button className={`${styles.playButton} ${styles.infoButtons}`}>
                                         <i className="fa fa-play" />
                                     </button>
-                                    <button className={`${frontStyles.plusButton} ${frontStyles.infoButtons}`}>
+                                    <button className={`${styles.plusButton} ${styles.infoButtons}`}>
                                         <i className="fa fa-plus" />
+                                    </button>
+
+                                    <button className={`${styles.detailsButton} ${styles.infoButtons}`}>
+                                        <i className="fa fa-info-circle" />
                                     </button>
                                 </Col>
                             </Row>
 
-                            <p className={frontStyles.duration}> 2h 22m</p>
-                            <p className={frontStyles.genres}>
+                            <p className={styles.duration}> {midLineText}</p>
+                            <p className={styles.genres}>
                                 {genreData}
                             </p>
                         </div>
@@ -94,10 +102,10 @@ function MovieLists() {
     }
     return(
         <Fragment>
-            <div className={frontStyles.videoList}>
-                <h3 className={frontStyles.listHeading}>
+            <div className={styles.videoList}>
+                <h3 className={styles.listHeading}>
                     Movies
-                    <span className={frontStyles.explore}> Explore All </span>
+                    <span className={styles.explore}> Explore All </span>
                     <span>
                         <svg width="24" height="18" viewBox="0 0 24 24">
                             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
@@ -106,7 +114,7 @@ function MovieLists() {
                 </h3>
                 <div>
                     <Slide {...properties}>
-                        {/*<div className={frontStyles.slideList} >*/}
+                        {/*<div className={styles.slideList} >*/}
                         { movieData }
                         {/*</div>*/}
                     </Slide>
