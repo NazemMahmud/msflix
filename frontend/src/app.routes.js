@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Admin from "./components/admin/Admin";
 import Home from "./components/Home";
 import Browse from "./components/front/home/browse/Browse";
-import VideoItem from "./components/front/videos/video/Item";
+import Details from "./components/front/videos/details/Details";
 
 /**
  *
@@ -17,8 +17,8 @@ function Routes () {
     return (
         <Switch>
             <Route path="/admin" component={ Admin } />
-            <Route path="/movies/:movieId/:uid" component={ VideoItem } />
-            <Route path="/series/:seriesId/:uid" component={ VideoItem } />
+            <Route path="/movies/:movieId/:uid" component={ Details } />
+            <Route path="/series/:seriesId/:uid" component={ Details } />
             {/*<Route path="/login" component={Login} />*/}
             {/* {requireAuth(Dashboard)} */}
             {/*<Route path="/dashboard" component={() => <RequireAuth component={Dashboard} />} />*/}

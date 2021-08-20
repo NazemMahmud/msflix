@@ -8,7 +8,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import 'font-awesome/css/font-awesome.min.css';
 
 import styles from "./video.module.css";
-import {data as infoData } from "./video/data"
+import {data as infoData } from "./details/data"
 
 function Lists(props) {
     const buttonClasses = classNames('styles.mTop', 'styles.infoButtons');

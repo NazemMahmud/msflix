@@ -9,7 +9,7 @@ export const data = {
         "language": "English",
         "description": "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
         "tags": "Her world. Her secrets. Her legacy.",
-        "fim_rating": "PG-13",
+        "film_rating": "PG-13",
         "other_ratings": {
             "imdb": 6.8,
             "rotten tomatoes": 80
@@ -19,8 +19,8 @@ export const data = {
             "poster": "https://image.tmdb.org/t/p/original/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg"
         },
         "genres": [
-            {   "id": 1, "name": "Genre 1"},
-            {   "id": 2, "name": "Genre 2"},
+            {   "id": 1, "name": "Action"},
+            {   "id": 2, "name": "Thriller"},
             {   "id": 3, "name": "Genre 3"}
         ],
         "writers": [
