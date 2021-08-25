@@ -1,8 +1,10 @@
 import React, {useState, Fragment, useEffect, useRef} from "react";
+import FrontLayout from "../../layout/default/FrontLayout";
+
 import classNames from 'classnames';
 import { Slide } from "react-slideshow-image";
-
 import {Button, Row, Col, Container} from "react-bootstrap";
+
 import 'react-slideshow-image/dist/styles.css'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'font-awesome/css/font-awesome.min.css';
@@ -49,23 +51,23 @@ function Details(props) {
      * Slider properties
      * @type {{duration: number, nextArrow: *, prevArrow: *, slidesToScroll: number, slidesToShow: number, indicators: boolean, autoplay: boolean}}
      */
-    // const properties = {
-    //     duration: 3000,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 4,
-    //     autoplay: false,
-    //     indicators: false,
-    //     prevArrow: <button className="nav default-nav" style={{"background": "transparent"}} data-type="prev" aria-label="Previous Slide">
-    //         <svg width="24" height="24" viewBox="0 0 24 24">
-    //             <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"></path>
-    //         </svg>
-    //     </button>,
-    //     nextArrow: <button className="nav default-nav" style={{"background": "transparent"}} data-type="next" aria-label="Next Slide">
-    //         <svg width="24" height="24" viewBox="0 0 24 24">
-    //             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
-    //         </svg>
-    //     </button>
-    // };
+    const properties = {
+        duration: 3000,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        autoplay: false,
+        indicators: false,
+        prevArrow: <button className="nav default-nav" style={{"background": "transparent"}} data-type="prev" aria-label="Previous Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#fff"}} >
+                <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"></path>
+            </svg>
+        </button>,
+        nextArrow: <button className="nav default-nav" style={{"background": "transparent"}} data-type="next" aria-label="Next Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" style={{"fill": "#fff"}}>
+                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
+            </svg>
+        </button>
+    };
 
     // Set genres, directors, writers
     let genres = [];
@@ -96,47 +98,43 @@ function Details(props) {
     const runTime = "2h 22m";
     const midLineText = props.type === "movie" ? runTime : totalSeasons;
 
-    const videoItemLists = [];
-    // for(let i=0; i<8; i++) {
-    //     let genreData = [];
-    //     for (let g=0; g<genres.length; g++) {
-    //         const genre = <span>{ genres[g].name}</span>;
-    //         genreData.push(genre);
-    //         if (g < genres.length - 1){
-    //             genreData.push(<span className={styles.separator} />);
-    //         }
-    //     }
-        // const div = <div className={styles.slideItem}>
-        //     <div className={styles.slider}>
-        //         <img src="https://image.tmdb.org/t/p/w500/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg"
-        //              className={styles.listImgWidth} alt=""/>
-        //     </div>
-        //     <div className={styles.sliderInfo}>
-        //         <Row>
-        //             <Col className={styles.mTop}>
-        //                 <button className={`${styles.playButton} ${styles.infoButtons}`}>
-        //                     <i className="fa fa-play" />
-        //                 </button>
-        //                 <button className={`${styles.plusButton} ${styles.infoButtons}`}>
-        //                     <i className="fa fa-plus" />
-        //                 </button>
-        //
-        //                 <button className={`${styles.detailsButton} ${styles.infoButtons}`}>
-        //                     <i className="fa fa-info-circle" />
-        //                 </button>
-        //             </Col>
-        //         </Row>
-        //
-        //         <p className={styles.duration}> {midLineText}</p>
-        //         <p className={styles.genres}>
-        //             {genreData}
-        //         </p>
-        //     </div>
-        // </div>;
-        // videoItemLists.push( div );
-    // }
+    const castLists = [];
+    data.casts.forEach(cast => {
+        const div = <div className={styles.slideItem}>
+            <div className={styles.slider}>
+                <img src={cast.image} className={styles.listImage} alt={cast.name}/>
+                <div className={styles.character}>
+                    <p className={styles.castName}> {cast.name}</p>
+                    <p className={styles.alias}> as {cast.character}</p>
+                </div>
+            </div>
+            {/*<div className={styles.sliderInfo}>
+                <Row>
+                    <Col className={styles.mTop}>
+                        <button className={`${styles.playButton} ${styles.infoButtons}`}>
+                            <i className="fa fa-play" />
+                        </button>
+                        <button className={`${styles.plusButton} ${styles.infoButtons}`}>
+                            <i className="fa fa-plus" />
+                        </button>
+
+                        <button className={`${styles.detailsButton} ${styles.infoButtons}`}>
+                            <i className="fa fa-info-circle" />
+                        </button>
+                    </Col>
+                </Row>
+
+                <p className={styles.duration}> {midLineText}</p>
+                <p className={styles.genres}>
+                    {genreData}
+                </p>
+            </div>*/}
+        </div>;
+        castLists.push( div );
+    });
+
     return(
-        <Fragment>
+        <FrontLayout>
             <div className={styles.info}>
                 {/*Banner Image */}
                 <Row className={styles.topBanner}>
@@ -244,9 +242,25 @@ function Details(props) {
                         </Row>
                     </Col>
                 </Row>
-            </div>
 
-        </Fragment>
+                {/* Cast Slider */}
+                <Row className={styles.casting}>
+                    <Col>
+                        <h4 className={styles.castHeading}>
+                            Cast & Crew
+                        </h4>
+
+                        <div>
+                            <Slide {...properties}>
+                                { castLists }
+                            </Slide>
+                        </div>
+                    </Col>
+                </Row>
+
+            </div>
+        </FrontLayout>
+
 
     )
 }

@@ -39,7 +39,7 @@ export const data = {
                 "id": 1,
                 "name": "Scarlett Johansson",
                 "character": "Natasha Romanoff / Black Widow",
-                "image": "https://image.tmdb.org/t/p/w500/6NsMbJXRlDZuDzatN2akFdGuTvx.jpg\""
+                "image": "https://image.tmdb.org/t/p/w500/6NsMbJXRlDZuDzatN2akFdGuTvx.jpg"
             },
             {
                 "id": 2,
@@ -81,7 +81,7 @@ export const data = {
                 "id": 8,
                 "name": "Violet McGraw",
                 "character": "Young Yelena",
-                "image": "https://image.tmdb.org/t/p/w500/8Nu8Z6FFEmsO5nZgJZDKHvzYUb0.jp"
+                "image": "https://image.tmdb.org/t/p/w500/8Nu8Z6FFEmsO5nZgJZDKHvzYUb0.jpg"
             }
         ]
     }

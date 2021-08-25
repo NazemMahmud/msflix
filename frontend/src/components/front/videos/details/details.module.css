@@ -1,7 +1,6 @@
 .info {
     overflow-x: hidden;
     /*min-height: 1750px;*/
-    padding-bottom: 25px;
 }
 
 .topBanner > div {
@@ -81,4 +80,52 @@
 .description .heading,
 .tags .heading{
     font-weight: bold;
+}
+
+/******************************
+   Casting Section
+*******************************/
+
+.casting {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #1f1d1d;
+    color: #fff;
+    padding-left: 75px;
+}
+
+.castHeading {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.slider {
+    text-align: center;
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: -35px;
+    transition: transform .2s;
+    overflow: visible !important;
+    min-height: 195px;
+}
+
+.listImage {
+    width: 85%;
+}
+
+.slider:hover .listImage {
+    overflow-y: visible !important;
+    /*transition: all .05s linear;*/
+    width: 90%;
+    cursor: pointer;
+}
+.character {
+    margin-top: 15px;
+}
+
+.castName { margin-bottom: 2px; }
+
+.alias {
+    font-size: 16px;
+    color: #54b9c5;
 }

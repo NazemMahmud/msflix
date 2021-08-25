@@ -3,7 +3,7 @@ import {Col, Container, Form, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player"
 
-import NavBar from "./layout/default/navbar/NavBar";
+import FrontLayout from "./layout/default/FrontLayout";
 
 function Browse() {
     // const [videoSource, setVideoFilePath] = useState(null);
@@ -25,36 +25,37 @@ function Browse() {
 
     return (
         <Fragment>
-            <NavBar />
-            <Container>
-                {/*<input type="file" onChange={handleVideoUpload} />*/}
-                {/*Top sample video trailer*/}
-                <Row>
-                    <Col>
-                        {/*<ReactPlayer controls url={videoSource} width="100%" height="880px" />*/}
-                        {/*(flag ? <ReactPlayer controls url={videoSource} width="100%" height="880px" /> : <p>No video</p>*/}
-                        {/*<video width="320" height="240" controls>*/}
-                        {/*    <source src="movie.mp4" type="video/mp4">*/}
-                        {/*        <source src="movie.ogg" type="video/ogg">*/}
-                        {/*            Your browser does not support the video tag.*/}
-                        {/*</video>*/}
+            <FrontLayout>
+                <Container>
+                    {/*<input type="file" onChange={handleVideoUpload} />*/}
+                    {/*Top sample video trailer*/}
+                    <Row>
+                        <Col>
+                            {/*<ReactPlayer controls url={videoSource} width="100%" height="880px" />*/}
+                            {/*(flag ? <ReactPlayer controls url={videoSource} width="100%" height="880px" /> : <p>No video</p>*/}
+                            {/*<video width="320" height="240" controls>*/}
+                            {/*    <source src="movie.mp4" type="video/mp4">*/}
+                            {/*        <source src="movie.ogg" type="video/ogg">*/}
+                            {/*            Your browser does not support the video tag.*/}
+                            {/*</video>*/}
 
-                    </Col>
-                </Row>
-                {/* for movies */}
-                <Row>
-                    <Col>
-                        <h1>Movies</h1>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
+                    {/* for movies */}
+                    <Row>
+                        <Col>
+                            <h1>Movies</h1>
+                        </Col>
+                    </Row>
 
-                {/* for TV */}
-                <Row>
-                    <Col>
-                        <h1>TV Dramas</h1>
-                    </Col>
-                </Row>
-            </Container>
+                    {/* for TV */}
+                    <Row>
+                        <Col>
+                            <h1>TV Dramas</h1>
+                        </Col>
+                    </Row>
+                </Container>
+            </FrontLayout>
         </Fragment>
     );
 }
